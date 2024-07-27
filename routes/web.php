@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GamNiVigatController;
 use App\Http\Controllers\YojanoController;
 use App\Http\Controllers\HealthQuestionsController;
@@ -19,11 +20,14 @@ use App\Http\Controllers\GramPanchayatQuestionController;
 use App\Http\Controllers\OtherQuestionController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
-Route::get('/gam-ni-vigat', [GamNiVigatController::class, 'index'])->name('gam-ni-vigat-index');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/gam-ni-vigat', [GamNiVigatController::class, 'index'])->name('gam-ni-vigat-index');
 
 Route::get('/yojano', [YojanoController::class, 'index'])->name('yojano-index');
 
