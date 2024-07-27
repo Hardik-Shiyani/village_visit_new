@@ -41,20 +41,20 @@
                            <nav class="main-menu navbar-expand-md navbar-light">
                                 <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                     <ul class="navigation clearfix">
-										<li  class="nav-item"><a href="index.php" class="nav-link <?php if($page=='index'){echo 'active';} ?>">ગામ ની વિગત</a></li>
-                                        <li  class="nav-item"><a href="yojano.php" class="nav-link <?php if($page=='yojano'){echo 'active';} ?>">યોજનાઓ</a></li>
-                                         <li  class="nav-item"><a href="health-questions.php" class="nav-link <?php if($page=='health-questions'){echo 'active';} ?>">આરોગ્યને બાબતના પ્રશ્નો</a></li>
-                                         <li  class="nav-item"><a href="education-questions.php" class="nav-link <?php if($page=='education-questions'){echo 'active';} ?>">શિક્ષણને બાબતના પ્રશ્નો</a></li>
-                                             <li  class="nav-item"><a href="supply-questions.php" class="nav-link <?php if($page=='supply-questions'){echo 'active';} ?>">પુરવઠાને બાબતના પ્રશ્નો</a></li>
-                                             <li  class="nav-item"><a href="water-questions.php" class="nav-link <?php if($page=='water-questions'){echo 'active';} ?>">પાણીને બાબતના પ્રશ્નો</a></li>
-                                         <li  class="nav-item"><a href="electricity-questions.php" class="nav-link <?php if($page=='electricity-questions'){echo 'active';} ?>">વીજપુરવઠો બાબતના પ્રશ્નો</a></li>
-                                         <li  class="nav-item"><a href="road-questions.php" class="nav-link <?php if($page=='road-questions'){echo 'active';} ?>">રોડ/રસ્તા બાબતના પ્રશ્નો</a></li>
-                                         <li  class="nav-item"><a href="sewer-questions.php" class="nav-link <?php if($page=='sewer-questions'){echo 'active';} ?>">ગટર બાબતના પ્રશ્નો</a></li>
+                                        <li  class="nav-item"><a href="{{ route('gam-ni-vigat-index') }}" class="nav-link {{ request()->routeIs('gam-ni-vigat-index') ? 'active' : '' }}">ગામ ની વિગત</a></li>
+                                        <li  class="nav-item"><a href="{{ route('yojano-index') }}" class="nav-link {{ request()->routeIs('yojano-index') ? 'active' : '' }}">યોજનાઓ</a></li>
+                                        <li  class="nav-item"><a href="{{ route('health-questions-index') }}" class="nav-link {{ request()->routeIs('health-questions-index') ? 'active' : '' }}">આરોગ્યને બાબતના પ્રશ્નો</a></li>
+                                        <li  class="nav-item"><a href="education-questions.php" class="nav-link <?php if($page=='education-questions'){echo 'active';} ?>">શિક્ષણને બાબતના પ્રશ્નો</a></li>
+                                        <li  class="nav-item"><a href="supply-questions.php" class="nav-link <?php if($page=='supply-questions'){echo 'active';} ?>">પુરવઠાને બાબતના પ્રશ્નો</a></li>
+                                        <li  class="nav-item"><a href="water-questions.php" class="nav-link <?php if($page=='water-questions'){echo 'active';} ?>">પાણીને બાબતના પ્રશ્નો</a></li>
+                                        <li  class="nav-item"><a href="electricity-questions.php" class="nav-link <?php if($page=='electricity-questions'){echo 'active';} ?>">વીજપુરવઠો બાબતના પ્રશ્નો</a></li>
+                                        <li  class="nav-item"><a href="road-questions.php" class="nav-link <?php if($page=='road-questions'){echo 'active';} ?>">રોડ/રસ્તા બાબતના પ્રશ્નો</a></li>
+                                        <li  class="nav-item"><a href="sewer-questions.php" class="nav-link <?php if($page=='sewer-questions'){echo 'active';} ?>">ગટર બાબતના પ્રશ્નો</a></li>
 										<li  class="nav-item"><a href="cleanliness-questions.php" class="nav-link <?php if($page=='cleanliness-questions'){echo 'active';} ?>">સ્વચ્છતા બાબતના પ્રશ્નો</a></li>
 										<li  class="nav-item"><a href="polution-questions.php" class="nav-link <?php if($page=='polution-questions'){echo 'active';} ?>">પ્રદુષણ બાબતના પ્રશ્નો</a></li>
 										<li  class="nav-item"><a href="revenue-questions.php" class="nav-link <?php if($page=='revenue-questions'){echo 'active';} ?>">મહેસુલી બાબતે</a></li>
 										<li  class="nav-item"><a href="anganwadi-questions.php" class="nav-link <?php if($page=='anganwadi-questions'){echo 'active';} ?>">આંગણવાડીને લગતા પ્રશ્નો</a></li>
-                                       <li  class="nav-item"><a href="banking-questions.php" class="nav-link <?php if($page=='banking-questions'){echo 'active';} ?>">બેંકીંગ સેવાને લગતા પ્રશ્નો</a></li>
+                                        <li  class="nav-item"><a href="banking-questions.php" class="nav-link <?php if($page=='banking-questions'){echo 'active';} ?>">બેંકીંગ સેવાને લગતા પ્રશ્નો</a></li>
 										<li  class="nav-item"><a href="grampanchayat-questions.php" class="nav-link <?php if($page=='grampanchayat-questions'){echo 'active';} ?>">ગ્રામ પંચાયત બાબતના પ્રશ્નો</a></li>
 										<li  class="nav-item"><a href="other-questions.php" class="nav-link <?php if($page=='other-questions'){echo 'active';} ?>">અન્ય બાબતના પ્રશ્નો</a></li>
                                     </ul>
