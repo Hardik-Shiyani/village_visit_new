@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-@include ('head');
-@include ('main-header');
+@include ('head')
+@include ('main-header')
 <title>ગામની મુલાકાતનું પત્રક</title>
 <style>
     .step {
@@ -291,5 +291,5 @@
     </script>
 
 </body>
-@include ('main-footer');
+@include ('main-footer')
 </html>

@@ -2,8 +2,8 @@
 <html lang="en">
 
 <title>ગામની મુલાકાતનું પત્રક</title>
-	@include ('head');
-	@include ('main-header');
+	@include ('head')
+	@include ('main-header')
 <style>
     .step {
       display: none;
@@ -525,5 +525,5 @@
     </script>
 
 </body>
-@include ('main-footer');
+@include ('main-footer')
 </html>

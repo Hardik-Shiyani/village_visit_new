@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    @include ('head');
-    @include ('main-header');
+    @include ('head')
+    @include ('main-header')
     <?php $page= 'index'; ?> 
     <head>
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -297,5 +297,5 @@
         </script>
 
     </body>
-    @include ('main-footer');
+    @include ('main-footer')
 </html>
