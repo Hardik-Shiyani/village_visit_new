@@ -29,7 +29,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-							<a href="index.php"><h5>ગામની મુલાકાતનું પત્રક</h5></a>
+							<a href="{{ route('dashboard') }}"><h5>ગામની મુલાકાતનું પત્રક</h5></a>
                         </div>
                         <div class="menu-area clearfix">
                             <!--Mobile Navigation Toggler-->
@@ -208,7 +208,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-							<a href="index.php"><h5>ગામની મુલાકાતનું પત્રક</h5></a>
+							<a href="{{ route('dashboard') }}"><h5>ગામની મુલાકાતનું પત્રક</h5></a>
                         </div>
                         <div class="menu-area clearfix">
                             <nav class="main-menu clearfix">
