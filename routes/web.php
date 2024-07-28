@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GamNiVigatController;
 use App\Http\Controllers\YojanoController;
@@ -27,6 +28,8 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Auth Routes END
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // View Routes Start
 Route::get('/gam-ni-vigat', [GamNiVigatController::class, 'index'])->name('gam-ni-vigat-index');
