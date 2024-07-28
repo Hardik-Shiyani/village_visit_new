@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gam_ni_vigat', function (Blueprint $table) {
+        Schema::create('yojanos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gam_ni_vigat');
+        Schema::dropIfExists('yojanos');
     }
 };

@@ -88,10 +88,20 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="/login" method="post">
+        @if ($errors->any())
+            <div style="color: red;">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
@@ -117,4 +127,4 @@
             });
     </script>
 </body>
-</html> 
+</html>   
