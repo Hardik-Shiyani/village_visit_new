@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GamNiVigatController;
 use App\Http\Controllers\YojanoController;
 use App\Http\Controllers\HealthQuestionsController;
@@ -22,8 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/gam-ni-vigat', [GamNiVigatController::class, 'index'])->name('gam-ni-vigat-index');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+Route::get('/gam-ni-vigat', [GamNiVigatController::class, 'index'])->name('gam-ni-vigat-index');
 
 Route::get('/yojano', [YojanoController::class, 'index'])->name('yojano-index');
 
