@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sewer_questions_form_data', function (Blueprint $table) {
+            $table->bigInteger('id');
             $table->string('taluka_name_sewer')->nullable(); // for 'તાલુકાનું નામ:'
             $table->string('village_name_sewer')->nullable(); // for 'ગામનું નામ:'
             $table->string('sewer_line_exists')->nullable(); // for 'ગામમાં ગટર લાઇન છે કે, કેમ?'

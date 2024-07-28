@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CleanlinessQuestionFormData;
 
 class CleanlinessQuestionController extends Controller
 {
@@ -34,7 +35,23 @@ class CleanlinessQuestionController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        CleanlinessQuestionFormData::create([
+            'taluka_name_cleanliness' => $request->input('category'),
+            'village_name_cleanliness' => $request->input('activity'),
+            'door_to_door_collection_service' => $request->input('cleanliness_1'),
+            'door_to_door_collection_service_details' => $request->input('cleanliness_1v'),
+            'waste_disposal_frequency' => $request->input('cleanliness_2'),
+            'waste_disposal_site' => $request->input('cleanliness_2v'),
+            'daily_cleaning_service' => $request->input('cleanliness_3'),
+            'daily_cleaning_service_details' => $request->input('cleanliness_3v'),
+            'staff_for_cleanliness' => $request->input('cleanliness_4'),
+            'vehicles_for_cleanliness' => $request->input('cleanliness_5'),
+            'vehicles_for_cleanliness_details' => $request->input('cleanliness_6'),
+            'cleanliness_other_issues' => $request->input('cleanliness_7'),
+            'details_added_by' => $request->input('details_added_by'),
+        ]);
+
+        return response()->json(['message' => 'Data stored successfully']);
     }
 
     /**

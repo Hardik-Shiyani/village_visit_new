@@ -185,6 +185,12 @@
                                 </div>
                             </nav> -->
                         </div>
+                        <div class="logout-btn nav-right">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                @csrf
+                                <button type="submit" class="btn btn-primary">Logout</button>
+                            </form>
+                        </div>
                         <!-- <div class="nav-right">
                             <div class="search-box-outer search-toggler">
                                 <i class="icon-5"></i>

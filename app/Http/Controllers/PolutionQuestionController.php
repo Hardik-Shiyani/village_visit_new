@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\PolutionQuestions;
 
 use Illuminate\Http\Request;
 
@@ -34,7 +35,23 @@ class PolutionQuestionController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $pollutionQuestion = new PolutionQuestions();
+
+        $pollutionQuestion->category = $request->input('category', null);
+        $pollutionQuestion->activity = $request->input('activity', null);
+        $pollutionQuestion->polution_1 = $request->input('polution_1', null);
+        $pollutionQuestion->polution_1v = $request->input('polution_1v', null);
+        $pollutionQuestion->polution_2 = $request->input('polution_2', null);
+        $pollutionQuestion->polution_2v = $request->input('polution_2v', null);
+        $pollutionQuestion->polution_3 = $request->input('polution_3', null);
+        $pollutionQuestion->polution_3v = $request->input('polution_3v', null);
+        $pollutionQuestion->polution_4 = $request->input('polution_4', null);
+        $pollutionQuestion->polution_4v = $request->input('polution_4v', null);
+        $pollutionQuestion->polution_5 = $request->input('polution_5', null);
+
+        $pollutionQuestion->save();
+
+        return response()->json(['message' => 'Pollution question saved successfully.'], 201);
     }
 
     /**
