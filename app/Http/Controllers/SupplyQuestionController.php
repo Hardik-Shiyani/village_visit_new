@@ -56,7 +56,7 @@ class SupplyQuestionController extends Controller
         $supplyQuestion->supply_11 = $request->input('supply_11');
         $supplyQuestion->supply_11v = $request->input('supply_11v');
         $supplyQuestion->supply_12 = $request->input('supply_12');
-        $supplyQuestion->details_added_by = $request->input('details_added_by');
+        $supplyQuestion->details_added_by = Auth()->user()->id;
 
         if ($request->hasFile('villagephoto')) {
             $file = $request->file('villagephoto');

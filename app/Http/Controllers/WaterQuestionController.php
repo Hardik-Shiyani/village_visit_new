@@ -61,7 +61,7 @@ class WaterQuestionController extends Controller
         $supplyQuestion->water_11 = $request->input('water_11');
         $supplyQuestion->water_11v = $request->input('water_11v');
         $supplyQuestion->water_12 = $request->input('water_12');
-        $supplyQuestion->details_added_by = $request->input('details_added_by');
+        $supplyQuestion->details_added_by = Auth()->user()->id;
 
         $supplyQuestion->save();
 
