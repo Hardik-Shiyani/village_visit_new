@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('electric_3')->nullable();
             $table->text('electric_3v')->nullable();
             $table->text('electric_4')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

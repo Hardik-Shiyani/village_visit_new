@@ -54,7 +54,7 @@ class RevenueQuestionController extends Controller
         $revenueQuestion->revenue_7 = $request->input('revenue_7');
         $revenueQuestion->revenue_7v = $request->input('revenue_7v');
         $revenueQuestion->revenue_8 = $request->input('revenue_8');
-        $revenueQuestion->details_added_by = $request->input('details_added_by');
+        $revenueQuestion->details_added_by = Auth()->user()->id;
 
         $revenueQuestion->save();
 

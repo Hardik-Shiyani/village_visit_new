@@ -53,7 +53,7 @@ class SewerQuestionController extends Controller
             'sewer_and_water_lines_maintenance' => $data['sewer_6'] ?? null,
             'sewer_and_water_lines_maintenance_details' => $data['sewer_6v'] ?? null,
             'sewer_other_issues' => $data['sewer_7'] ?? null,
-            'details_added_by' => $data['details_added_by'] ?? null,
+            'details_added_by' => Auth()->user()->id ?? null,
         ]);
 
         return response()->json(['message' => 'Data saved successfully'], 200);

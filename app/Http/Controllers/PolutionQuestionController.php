@@ -48,6 +48,7 @@ class PolutionQuestionController extends Controller
         $pollutionQuestion->polution_4 = $request->input('polution_4', null);
         $pollutionQuestion->polution_4v = $request->input('polution_4v', null);
         $pollutionQuestion->polution_5 = $request->input('polution_5', null);
+        $pollutionQuestion->details_added_by = Auth()->user()->id;
 
         $pollutionQuestion->save();
 

@@ -47,7 +47,7 @@ class RoadQuestionController extends Controller
             'road_connecting_to_school' => $data['road_3'] ?? null,
             'road_connecting_to_school_details' => $data['road_3v'] ?? null,
             'road_other_issues' => $data['road_4'] ?? null,
-            'details_added_by' => $data['details_added_by'] ?? null,
+            'details_added_by' => Auth()->user()->id ?? null,
         ]);
 
         return response()->json(['message' => 'Data saved successfully'], 200);

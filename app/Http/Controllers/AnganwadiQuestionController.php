@@ -87,7 +87,7 @@ class AnganwadiQuestionController extends Controller
         $anganwadiQuestion->anganwadi_24 = $request->input('anganwadi_24');
         $anganwadiQuestion->anganwadi_24v = $request->input('anganwadi_24v');
         $anganwadiQuestion->anganwadi_25 = $request->input('anganwadi_25');
-        $anganwadiQuestion->details_added_by = $request->input('details_added_by');
+        $anganwadiQuestion->details_added_by = Auth()->user()->id;
 
         $anganwadiQuestion->save();
 

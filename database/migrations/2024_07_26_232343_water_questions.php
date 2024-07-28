@@ -40,7 +40,7 @@ return new class extends Migration
             $table->string('water_11')->nullable();
             $table->text('water_11v')->nullable();
             $table->text('water_12')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }
