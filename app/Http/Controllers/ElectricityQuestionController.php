@@ -46,7 +46,7 @@ class ElectricityQuestionController extends Controller
             'electric_3' => $data['electric_3'] ?? null,
             'electric_3v' => $data['electric_3v'] ?? null,
             'electric_4' => $data['electric_4'] ?? null,
-            'details_added_by' => $data['details_added_by'] ?? null,
+            'details_added_by' => Auth()->user()->id ?? null,
         ]);
 
         return response()->json(['message' => 'Data saved successfully'], 200);
