@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('sewer_and_water_lines_maintenance')->nullable(); // for 'પીવા પાણી અને ગટરની લઈને સાથે નંખાયેલ અને તૂટી ગયેલ નથી તેની તકેદારી રાખવામાં આવે છે કે કેમ?'
             $table->text('sewer_and_water_lines_maintenance_details')->nullable(); // for 'વિગત'
             $table->text('sewer_other_issues')->nullable(); // for 'અન્ય બાબત'
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

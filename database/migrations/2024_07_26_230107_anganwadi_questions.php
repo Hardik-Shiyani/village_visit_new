@@ -65,7 +65,7 @@ return new class extends Migration
             $table->string('anganwadi_24')->nullable();
             $table->string('anganwadi_24v')->nullable();
             $table->string('anganwadi_25')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

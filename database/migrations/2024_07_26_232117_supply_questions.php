@@ -36,7 +36,7 @@ return new class extends Migration
             $table->text('supply_11v')->nullable();
             $table->string('village_photo')->nullable();
             $table->text('supply_12')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

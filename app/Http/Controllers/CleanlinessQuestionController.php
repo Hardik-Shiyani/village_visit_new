@@ -48,7 +48,7 @@ class CleanlinessQuestionController extends Controller
             'vehicles_for_cleanliness' => $request->input('cleanliness_5'),
             'vehicles_for_cleanliness_details' => $request->input('cleanliness_6'),
             'cleanliness_other_issues' => $request->input('cleanliness_7'),
-            'details_added_by' => $request->input('details_added_by'),
+            'details_added_by' => Auth()->user()->id,
         ]);
 
         return response()->json(['message' => 'Data stored successfully']);
