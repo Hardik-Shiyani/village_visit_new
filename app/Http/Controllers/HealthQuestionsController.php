@@ -120,7 +120,7 @@ class HealthQuestionsController extends Controller
         $healthIssueQuestion->health_47v = $request->health_47v;
         $healthIssueQuestion->PHCphoto = $request->PHCphoto;
         $healthIssueQuestion->health_48v = $request->health_48v;
-        $healthIssueQuestion->details_added_by = $request->details_added_by;
+        $healthIssueQuestion->details_added_by = Auth()->user()->id;
         $healthIssueQuestion->save();
         
         return response()->json(['message' => 'Data saved successfully'], 200);

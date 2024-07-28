@@ -103,8 +103,7 @@ class EducationQuestionsController extends Controller
         $educationQuestion->smc_register_details = $request['edu_32'];
         $educationQuestion->pta_meetings_regular = $request['edu_32v'];
         $educationQuestion->pta_meetings_details = $request['edu_33'];
-        $educationQuestion->details_added_by = $request['edu_33v'];
-
+        $educationQuestion->details_added_by = Auth()->user()->id;
 
         // Save the model to the database
         $educationQuestion->save();

@@ -78,7 +78,7 @@ class YojanoController extends Controller
         $yojano->pm_joy_remarks = $request->pjy_remarks;
         $yojano->disability_pansion_count = $request->dps_count;
         $yojano->disability_pansion_remarks = $request->dps_remarks;
-        $yojano->details_added_by = $request->details_added_by;
+        $yojano->details_added_by = Auth()->user()->id;
         $yojano->save();
 
         return response()->json(['message' => 'Data saved successfully'], 200);

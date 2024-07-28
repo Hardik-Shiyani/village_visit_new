@@ -63,5 +63,6 @@ class GamNiVigat extends Model
         'reshan_card_remain_count',
         'aadhar_card',
         'aadhar_card_remain_count',
+        'details_added_by',
     ];
 }

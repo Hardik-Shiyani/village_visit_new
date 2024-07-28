@@ -87,6 +87,7 @@ class GamNiVigatController extends Controller
         $gamNiVigat->reshan_card_remain_count = $request->input('reshancard-remaincount');
         $gamNiVigat->aadhar_card = $request->input('aadharcard');
         $gamNiVigat->aadhar_card_remain_count = $request->input('aadharcard-remaincount');
+        $gamNiVigat->details_added_by = Auth()->user()->id;
         $gamNiVigat->save();
 
         return response()->json(['message' => 'Survey data submitted successfully'], 200);
