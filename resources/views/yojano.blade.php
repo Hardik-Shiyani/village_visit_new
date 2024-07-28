@@ -2,7 +2,11 @@
 <html lang="en">
 @include ('head')
 @include ('main-header')
-<title>ગામની મુલાકાતનું પત્રક</title>
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>ગામની મુલાકાતનું પત્રક</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 <style>
     .step {
       display: none;
@@ -16,6 +20,7 @@
 		<div class="card mb-3">
             <div class="card-body">
                 <form id="surveyForm">
+                    @csrf
                     <div class="step active">
 				        <div class="row">
 					        <h5 class="card-title text-center fs-4" id="yojana">સરકારશ્રીની વિવિધ યોજનાઓનો લાભ મળવાનો બાકી હોય તેવા કુટુંબો (વ્યક્તિઓની વિગત)</h5>
@@ -24,270 +29,278 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="vruddhaniradhar-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="vruddhaniradhar-count" placeholder="">
+                                    <input type="text" class="form-control" name="vruddhaniradhar_count" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="vruddhaniradhar-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="vruddhaniradhar-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="vruddhaniradhar_remarks" placeholder="">
                                 </div>
                                 <div class="col-md-12">
                                     ૨. વિધવા સહાય:
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="widow-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="widow-count" placeholder="">
+                                    <input type="text" class="form-control" name="widow_count" placeholder="">
                                 </div>
                                     <div class="col-md-6 col-sm-12">
                                     <label for="widow-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="widow-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="widow_remarks" placeholder="">
                                 </div>
                                 <div class="col-md-12">
                                     ૩. સંકટ મોચન યોજના:
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="sankatmochan-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="sankatmochan-count" placeholder="">
+                                    <input type="text" class="form-control" name="sankatmochan_count" placeholder="">
                                 </div>
                                     <div class="col-md-6 col-sm-12">
                                     <label for="sankatmochan-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="sankatmochan-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="sankatmochan_remarks" placeholder="">
                                 </div>
                                 <div class="col-md-12">
                                     ૪. એન.એફ.એસ.એ. રેશનકાર્ડ:
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="nfsa-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="nfsa-count" placeholder="">
+                                    <input type="text" class="form-control" name="nfsa_count" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="nfsa-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="nfsa-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="nfsa_remarks" placeholder="">
                                 </div>
                                 <div class="col-md-12">
                                     ૫. પ્રધાનમંત્રી જીવન સુરક્ષા યોજના:
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="pjsy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="pjsy-count" placeholder="">
+                                    <input type="text" class="form-control" name="pjsy_count" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="pjsy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="pjsy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="pjsy_remarks" placeholder="">
                                 </div>
 							    <div class="col-md-12">
                                     ૬. પ્રધાનમંત્રી જીવન જ્યોત વીમા યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="pjjvy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="pjjvy-count" placeholder="">
+                                    <input type="text" class="form-control" name="pjjvy_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="pjjvy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="pjjvy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="pjjvy_remarks" placeholder="">
                                 </div>
 							    <div class="col-md-12">
                                     ૭. આયુષ્યમાન ભારત યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="aby-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="aby-count" placeholder="">
+                                    <input type="text" class="form-control" name="aby_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="aby-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="aby-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="aby_remarks" placeholder="">
                                 </div>
                                 <div class="col-md-12">
                                     ૮. જનની સુરક્ષા યોજના:
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="jsy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="jsy-count" placeholder="">
+                                    <input type="text" class="form-control" name="jsy_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="jsy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="jsy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="jsy_remarks" placeholder="">
                                 </div>
 						        <div class="col-md-12">
                                     ૯. પ્રધાનમંત્રી માતૃ વંદના યોજના:
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="pmvy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="pmvy-count" placeholder="">
+                                    <input type="text" class="form-control" name="pmvy_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="pmvy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="pmvy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="pmvy_remarks" placeholder="">
                                 </div>
 							    <div class="col-md-12">
                                     ૧૦. નિષય પોષણ યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="npy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="npy-count" placeholder="">
+                                    <input type="text" class="form-control" name="npy_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="npy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="npy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="npy_remarks" placeholder="">
                                 </div>
 								<div class="col-md-12">
                                     ૧૧. કસ્તુરબા પોષણ સહાય યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="kpsy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="kpsy-count" placeholder="">
+                                    <input type="text" class="form-control" name="kpsy_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="kpsy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="kpsy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="kpsy_remarks" placeholder="">
                                 </div>
 								<div class="col-md-12">
                                     ૧૨. કુંવરબાઈનું મામેરૂ સહાય યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="kmsy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="kmsy-count" placeholder="">
+                                    <input type="text" class="form-control" name="kmsy_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="kmsy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="kmsy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="kmsy_remarks" placeholder="">
                                 </div>
 								<div class="col-md-12">
                                     ૧૩. દિવ્યાંગ /વિકલાંગ (પાસ):
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="dvp-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="dvp-count" placeholder="">
+                                    <input type="text" class="form-control" name="dvp_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="dvp-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="dvp-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="dvp_remarks" placeholder="">
                                 </div>
 								<div class="col-md-12">
                                     ૧૪. વ્હાલી દિકરી યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="vdy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="vdy-count" placeholder="">
+                                    <input type="text" class="form-control" name="vdy_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="vdy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="vdy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="vdy_remarks" placeholder="">
                                 </div>
 								<div class="col-md-12">
                                     ૧૫. વૈદકીય સહાય યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="vsy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="vsy-count" placeholder="">
+                                    <input type="text" class="form-control" name="vsy_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="vsy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="vsy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="vsy_remarks" placeholder="">
                                 </div>
 								<div class="col-md-12">
                                     ૧૬. ઈંન્દીરા ગાંધી નેશનલ ડીસેબીલીટી પેન્શન યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="ignspy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="ignspy-count" placeholder="">
+                                    <input type="text" class="form-control" name="ignspy_count" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="ignspy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="ignspy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="ignspy_remarks" placeholder="">
                                 </div>
 								<div class="col-md-12">
                                     ૧૭. સુકન્યા સમુધ્ધી યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="ssy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="ssy-count" placeholder="">
+                                    <input type="text" class="form-control" name="ssy_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="ssy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="ssy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="ssy_remarks" placeholder="">
                                 </div>
 								<div class="col-md-12">
                                     ૧૮. પ્રધાનમંત્રી આવાસ યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="pay-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="pay-count" placeholder="">
+                                    <input type="text" class="form-control" name="pay_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="pay-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="pay-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="pay_remarks" placeholder="">
                                 </div>
 								<div class="col-md-12">
                                     ૧૯. PM KISAN પ્રધાનમંત્રી યોજના:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="pkpy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="pkpy-count" placeholder="">
+                                    <input type="text" class="form-control" name="pkpy_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="pkpy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="pkpy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="pkpy_remarks" placeholder="">
                                 </div>
 								<div class="col-md-12">
                                     ૨૦. PM JOY યોજના:
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="pjy-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="pjy-count" placeholder="">
+                                    <input type="text" class="form-control" name="pjy_count" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label for="pjy-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="pjy-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="pjy_remarks" placeholder="">
                                 </div>
 							    <div class="col-md-12">
                                     ૨૧. Disability Pension Scheme:
                                 </div>
 						        <div class="col-md-6 col-sm-12">
                                     <label for="dps-count" class="form-label">બાકી લાભાર્થી ની સંખ્યા</label>
-                                    <input type="text" class="form-control" id="dps-count" placeholder="">
+                                    <input type="text" class="form-control" name="dps_count" placeholder="">
                                 </div>
 					            <div class="col-md-6 col-sm-12">
                                     <label for="dps-remarks" class="form-label">રિમાર્કસ</label>
-                                    <input type="text" class="form-control" id="dps-remarks" placeholder="">
+                                    <input type="text" class="form-control" name="dps_remarks" placeholder="">
                                 </div>
 						</div>
                         <button type="button" class="btn btn-secondary" onclick="window.location='index.php';">Previous</button>
-                        <button type="button" class="btn btn-success saveYojanaInfo" id="saveYojanaInfo">Save</button>
-                        <button type="button" class="btn btn-primary" onclick="window.location='health-questions.php';">Next</button>
+                        <button type="submit" class="btn btn-success saveYojanaInfo" id="saveYojanaInfo">Save</button>
+                        <button type="button" class="btn btn-primary" id="nextButton">Next</button>
                     </div>
 		        </form>
 			</div>
 		</div>
 	</div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        let currentStep = 0;
-        const steps = document.querySelectorAll(".step");
-    
-        function showStep(step) {
-          steps.forEach((el, index) => {
-            el.classList.toggle("active", index === step);
-          });
-        }
-    
-        function nextStep() {
-          if (currentStep < steps.length - 1) {
-            currentStep++;
-            showStep(currentStep);
-          }
-        }
-    
-        function prevStep() {
-          if (currentStep > 0) {
-            currentStep--;
-            showStep(currentStep);
-          }
-        }
-    
-        // document.getElementById("surveyForm").addEventListener("submit", function(event) {
-        //   event.preventDefault();
-        //   alert("Survey submitted!");
-        // });
+        $(document).ready(function() {
+            $("#nextButton").on("click", function(event) {
+                event.preventDefault();
+                window.location.href = "{{ route('health-questions-index') }}";
+            });
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            
+            $("#surveyForm").on("submit", function(event) {
+                event.preventDefault();
+                var form = this;
+
+                if (form.checkValidity() === false) {
+                    event.stopPropagation();
+                } else {
+                    $.ajax({
+                        url: "{{ route('yojano.store') }}",
+                        type: 'POST',
+                        data: $(form).serialize(),
+                        success: function(response) {
+                            $('#nextButton').trigger('click');
+                        },
+                        error: function(xhr, status, error) {
+                            alert("An error occurred: " + xhr.responseText);
+                            console.error(xhr.responseText);
+                        }
+                    });
+                }
+                $(form).addClass('was-validated');
+            });
+        });
     </script>
 
 </body>
