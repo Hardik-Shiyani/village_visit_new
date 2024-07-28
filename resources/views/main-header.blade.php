@@ -188,7 +188,7 @@
                         <div class="logout-btn nav-right">
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
                                 @csrf
-                                <button type="submit" class="btn btn-primary">Logout</button>
+                                <button type="submit" class="btn btn-primary logoutBtn">Logout</button>
                             </form>
                         </div>
                         <!-- <div class="nav-right">
