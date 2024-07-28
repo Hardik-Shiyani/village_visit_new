@@ -129,7 +129,7 @@
                             <input type="text" class="form-control" name="sewer_7" placeholder="">
                         </div>
                       </div>
-                      <button type="button" class="btn btn-secondary" onclick="window.location='road-questions.php';">Previous</button>
+                      <button type="button" class="btn btn-secondary" id="previousButton">Previous</button>
                       <button type="submit" class="btn btn-success">Save</button>
                       <button type="button" class="btn btn-primary" id="nextButton">Next</button>
                   </div>
@@ -139,42 +139,47 @@
 			</div>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
-          $(document).ready(function() {
+        $(document).ready(function() {
 
-              $("#nextButton").on("click", function(event) {
-                  event.preventDefault();
-                  window.location.href = "{{ route('cleanliness-questions-index') }}";
-              });
+            $("#previousButton").on("click", function(event) {
+                event.preventDefault();
+                window.location.href = "{{ route('road-questions-index') }}";
+            });
 
-              $.ajaxSetup({
-                  headers: {
-                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                  }
-              });
-              
-              $("#surveyForm").on("submit", function(event) {
-                  event.preventDefault();
-                  var form = this;
+            $("#nextButton").on("click", function(event) {
+                event.preventDefault();
+                window.location.href = "{{ route('cleanliness-questions-index') }}";
+            });
 
-                  if (form.checkValidity() === false) {
-                      event.stopPropagation();
-                  } else {
-                      $.ajax({
-                          url: "{{ route('sewer-questions.store') }}",
-                          type: 'POST',
-                          data: $(form).serialize(),
-                          success: function(response) {
-                              $('#nextButton').trigger('click');
-                          },
-                          error: function(xhr, status, error) {
-                              alert("An error occurred: " + xhr.responseText);
-                              console.error(xhr.responseText);
-                          }
-                      });
-                  }
-                  $(form).addClass('was-validated');
-              });
-          });
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            
+            $("#surveyForm").on("submit", function(event) {
+                event.preventDefault();
+                var form = this;
+
+                if (form.checkValidity() === false) {
+                    event.stopPropagation();
+                } else {
+                    $.ajax({
+                        url: "{{ route('sewer-questions.store') }}",
+                        type: 'POST',
+                        data: $(form).serialize(),
+                        success: function(response) {
+                            $('#nextButton').trigger('click');
+                        },
+                        error: function(xhr, status, error) {
+                            alert("An error occurred: " + xhr.responseText);
+                            console.error(xhr.responseText);
+                        }
+                    });
+                }
+                $(form).addClass('was-validated');
+            });
+        });
       </script>
 
 </body>

@@ -90,7 +90,7 @@
                             <input type="text" class="form-control" name="road_4" placeholder="">
                         </div>
                       </div>
-                      <button type="button" class="btn btn-secondary" onclick="window.location='electricity-questions.php';">Previous</button>
+                      <button type="button" class="btn btn-secondary" id="previousButton">Previous</button>
                       <button type="submit" class="btn btn-success">Save</button>
                       <button type="button" class="btn btn-primary" id="nextButton">Next</button>
                   </div>
@@ -102,6 +102,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
+
+            $("#previousButton").on("click", function(event) {
+                event.preventDefault();
+                window.location.href = "{{ route('electricity-questions-index') }}";
+            });
 
             $("#nextButton").on("click", function(event) {
                 event.preventDefault();
