@@ -50,4 +50,6 @@ Route::get('/other-questions', [OtherQuestionController::class, 'index'])->name(
 // Storing Routes Starts Here
 Route::post('/gam-ni-vigat/store', [GamNiVigatController::class, 'store'])->name('gam-ni-vigat.store');
 Route::post('/yojano/store', [YojanoController::class, 'store'])->name('yojano.store');
+Route::post('/health/store', [HealthQuestionsController::class, 'store'])->name('health-questions.store');
+Route::post('/education/store', [EducationQuestionsController::class, 'store'])->name('education-questions.store');
 // Storing Routes Starts END
