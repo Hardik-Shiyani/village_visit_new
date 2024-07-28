@@ -58,8 +58,9 @@ Route::post('/banking/store', [BankingQuestionController::class, 'store'])->name
 Route::post('/water/store', [WaterQuestionController::class, 'store'])->name('water-questions.store');
 Route::post('/grampanchayat/store', [GramPanchayatQuestionController::class, 'store'])->name('grampanchayat-questions.store');
 Route::post('/electricity/store', [ElectricityQuestionController::class, 'store'])->name('electricity-questions.store');
+Route::post('/other/store', [OtherQuestionController::class, 'store'])->name('other-questions.store');
 Route::post('/road/store', [RoadQuestionController::class, 'store'])->name('road-questions.store');
 Route::post('/sewer/store', [SewerQuestionController::class, 'store'])->name('sewer-questions.store');
 Route::post('/cleanliness/store', [CleanlinessQuestionController::class, 'store'])->name('cleanliness-questions.store');
-
+Route::post('/revenue/store', [RevenueQuestionController::class, 'store'])->name('revenue-questions.store');
 // Storing Routes Starts END
