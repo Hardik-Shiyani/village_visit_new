@@ -23,6 +23,7 @@ use App\Http\Controllers\OtherQuestionController;
 Route::get('/', function () {
     return view('login');
 });
+
 // Auth Routes Starts
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);

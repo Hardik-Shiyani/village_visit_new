@@ -47,14 +47,11 @@
             padding: 10px 20px;
             border-radius: 4px;
             text-decoration: none;
-            color: #fff;
-            background-color: #007bff;
+            color: #000000;
+            background-color: #fff;
             border: none;
             cursor: pointer;
             font-size: 1em;
-        }
-        .btn:hover {
-            background-color: #0056b3;
         }
         .btn-edit {
             background-color: #ffc107;
@@ -70,13 +67,13 @@
     <div class="card">
         <h2>Dashboard</h2>
         <ul>
-            @foreach ($forms as $route => $form)
+            @foreach ($formStatuses as $form)
                 <li>
                     <span>{{ $form['name'] }}</span>
                     @if ($form['filled'])
-                        <a href="{{ route($route) }}" class="btn btn-edit">Edit</a>
+                        <a href="{{ route($form['route']) }}" class="btn btn-edit">Edit</a>
                     @else
-                        <a href="{{ route($route) }}" class="btn">Add</a>
+                        <a href="{{ route($form['route']) }}" class="btn">Add</a>
                     @endif
                 </li>
             @endforeach
