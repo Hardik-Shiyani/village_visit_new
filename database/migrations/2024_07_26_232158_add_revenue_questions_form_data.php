@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('revenue_7')->nullable();
             $table->text('revenue_7v')->nullable();
             $table->string('revenue_8')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

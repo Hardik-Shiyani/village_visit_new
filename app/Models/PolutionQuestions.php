@@ -22,7 +22,8 @@ class PolutionQuestions extends Model
         'polution_3v',
         'polution_4',
         'polution_4v',
-        'polution_5'
+        'polution_5',
+        'details_added_by'
     ];
 
     protected $dates = [

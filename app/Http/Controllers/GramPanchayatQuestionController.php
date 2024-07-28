@@ -68,7 +68,7 @@ class GramPanchayatQuestionController extends Controller
         $gramPanchayatQuestion->grampanchayat_10 = $request->input('grampanchayat_10');
         $gramPanchayatQuestion->grampanchayat_10v = $request->input('grampanchayat_10v');
         $gramPanchayatQuestion->health_48v = $request->input('health_48v');
-        $gramPanchayatQuestion->details_added_by = $request->input('details_added_by');
+        $gramPanchayatQuestion->details_added_by = Auth()->user()->id;
 
         $gramPanchayatQuestion->save();
 

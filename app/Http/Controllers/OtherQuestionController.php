@@ -71,7 +71,7 @@ class OtherQuestionController extends Controller
         $otherQuestion->rainwater_harvesting_facility_details = $request->input('anotherthing_15v');
         $otherQuestion->main_attraction_details = $request->input('anotherthing_18'); // Assuming anotherthing_18 maps to main_attraction_details
         $otherQuestion->additional_presentation_details = $request->input('additional_presentation_details'); // Assuming you want to include this field as well
-        $otherQuestion->details_added_by = $request->input('details_added_by'); // Ensure this is included in the request
+        $otherQuestion->details_added_by = Auth()->user()->id;
 
         if ($request->hasFile('anotherthing_16')) {
             $file = $request->file('anotherthing_16');

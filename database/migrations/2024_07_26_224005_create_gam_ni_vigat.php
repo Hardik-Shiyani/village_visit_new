@@ -66,7 +66,7 @@ return new class extends Migration
             $table->string('reshan_card_remain_count')->nullable();
             $table->enum('aadhar_card', ['Yes', 'No'])->nullable();
             $table->string('aadhar_card_remain_count')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

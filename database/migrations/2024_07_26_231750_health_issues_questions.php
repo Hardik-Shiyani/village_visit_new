@@ -99,7 +99,7 @@ return new class extends Migration
             $table->string('health_47v')->nullable();
             $table->string('PHCphoto')->nullable();
             $table->string('health_48v')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

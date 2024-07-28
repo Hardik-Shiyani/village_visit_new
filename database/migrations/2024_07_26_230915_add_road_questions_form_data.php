@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('road_connecting_to_school')->nullable(); // for 'નવુ લાઇટ કનેક્શન લેવા માટે ગ્રામજનોને માહિતી પુરી પાડવામાં આવે છે કે, કેમ?'
             $table->text('road_connecting_to_school_details')->nullable(); // for 'વિગત'
             $table->text('road_other_issues')->nullable(); // for 'અન્ય બાબત'
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

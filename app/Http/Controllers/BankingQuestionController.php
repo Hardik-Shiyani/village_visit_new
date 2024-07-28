@@ -58,7 +58,7 @@ class BankingQuestionController extends Controller
         $bankingQuestion->bank_10 = $request['bank_10'];
         $bankingQuestion->bank_10v = $request['bank_10v'];
         $bankingQuestion->bank_11 = $request['bank_11'];
-        $bankingQuestion->details_added_by = $request['details_added_by'];
+        $bankingQuestion->details_added_by = Auth()->user()->id;
 
         $bankingQuestion->save();
 

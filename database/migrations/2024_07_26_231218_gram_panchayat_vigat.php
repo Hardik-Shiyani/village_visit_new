@@ -38,7 +38,7 @@ return new class extends Migration
             $table->string('grampanchayat_10v')->nullable();
             $table->string('health_48v')->nullable();
             $table->string('grampanchayatphoto')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

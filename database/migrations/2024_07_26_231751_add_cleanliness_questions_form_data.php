@@ -23,11 +23,11 @@ return new class extends Migration
             $table->text('waste_disposal_site')->nullable(); // for 'ડમ્પીંગ સાઈટ નું સ્થળ'
             $table->string('daily_cleaning_service')->nullable(); // for 'ગામની સફાઈ રોજ થાય છે કે કેમ?'
             $table->text('daily_cleaning_service_details')->nullable(); // for 'વિગત'
-            $table->integer('staff_for_cleanliness')->nullable(); // for 'સ્વચ્છતા માટે કેટલા વ્યક્તિ કાર્યરત છે?'
-            $table->integer('vehicles_for_cleanliness')->nullable(); // for 'સ્વચ્છતા માટે કેટલા વાહનો છે?'
+            $table->longtext('staff_for_cleanliness')->nullable(); // for 'સ્વચ્છતા માટે કેટલા વ્યક્તિ કાર્યરત છે?'
+            $table->longtext('vehicles_for_cleanliness')->nullable(); // for 'સ્વચ્છતા માટે કેટલા વાહનો છે?'
             $table->text('vehicles_for_cleanliness_details')->nullable(); // for 'સ્વચ્છતા માટે કયા કયા વાહનો છે?'
             $table->text('cleanliness_other_issues')->nullable(); // for 'અન્ય બાબત'
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

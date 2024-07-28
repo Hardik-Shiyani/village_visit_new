@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('polution_4')->nullable();
             $table->text('polution_4v')->nullable();
             $table->text('polution_5')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->longtext('details_added_by')->nullable();
             $table->timestamps();
         });
     }

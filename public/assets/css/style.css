@@ -9445,3 +9445,15 @@ figure.mainlogo img {
 button {
     margin-top: 10px;
 }
+
+button.btn.btn-primary.logoutBtn {
+    background-color: #fff;
+    color: #F2652D;
+    border: 1px solid #F2652D;
+}
+
+button.btn.btn-primary.logoutBtn:hover {
+    background-color: #D5440B;
+    color: #FFFFFF;
+    border: 1px solid #F2652D;
+}
