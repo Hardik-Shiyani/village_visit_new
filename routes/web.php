@@ -60,6 +60,6 @@ Route::post('/grampanchayat/store', [GramPanchayatQuestionController::class, 'st
 Route::post('/electricity/store', [ElectricityQuestionController::class, 'store'])->name('electricity-questions.store');
 Route::post('/road/store', [RoadQuestionController::class, 'store'])->name('road-questions.store');
 Route::post('/sewer/store', [SewerQuestionController::class, 'store'])->name('sewer-questions.store');
-
+Route::post('/cleanliness/store', [CleanlinessQuestionController::class, 'store'])->name('cleanliness-questions.store');
 
 // Storing Routes Starts END
