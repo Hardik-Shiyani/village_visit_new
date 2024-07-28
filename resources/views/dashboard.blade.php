@@ -59,13 +59,39 @@
         .btn-edit:hover {
             background-color: #e0a800;
         }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logout-btn {
+            margin-left: auto;
+        }
+        button.btn.btn-primary.logoutBtn {
+            background-color: #fff;
+            color: #F2652D;
+            border: 1px solid #F2652D;
+        }
+        button.btn.btn-primary.logoutBtn:hover {
+            background-color: #D5440B;
+            color: #FFFFFF;
+            border: 1px solid #F2652D;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="card">
-        <h2>Dashboard</h2>
+        <div class="dashboard-header">
+            <h2>Dashboard</h2>
+            <div class="logout-btn">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="btn btn-primary logoutBtn">Logout</button>
+                </form>
+            </div>
+        </div>
         <ul>
             @foreach ($formStatuses as $form)
                 <li>
