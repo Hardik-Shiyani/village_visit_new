@@ -53,4 +53,5 @@ Route::post('/yojano/store', [YojanoController::class, 'store'])->name('yojano.s
 Route::post('/health/store', [HealthQuestionsController::class, 'store'])->name('health-questions.store');
 Route::post('/education/store', [EducationQuestionsController::class, 'store'])->name('education-questions.store');
 Route::post('/anganwadi/store', [AnganwadiQuestionController::class, 'store'])->name('anganwadi-questions.store');
+Route::post('/supply/store', [SupplyQuestionController::class, 'store'])->name('supply-questions.store');
 // Storing Routes Starts END
