@@ -23,8 +23,8 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Demo_1_Admin',
             'email' => 'admin_village_visit@gmail.com',
-            'password' => Hash::make('password'),
-            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('123456'),
+            // 'email_verified_at' => Carbon::now(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             // 'deleted_at' => null,
@@ -35,8 +35,8 @@ class UsersTableSeeder extends Seeder
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,
-                'password' => Hash::make('password'),
-                'email_verified_at' => Carbon::now(),
+                'password' => Hash::make('123456'),
+                // 'email_verified_at' => Carbon::now(),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
                 // 'deleted_at' => null,

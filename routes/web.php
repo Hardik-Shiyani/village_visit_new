@@ -52,4 +52,16 @@ Route::post('/gam-ni-vigat/store', [GamNiVigatController::class, 'store'])->name
 Route::post('/yojano/store', [YojanoController::class, 'store'])->name('yojano.store');
 Route::post('/health/store', [HealthQuestionsController::class, 'store'])->name('health-questions.store');
 Route::post('/education/store', [EducationQuestionsController::class, 'store'])->name('education-questions.store');
+Route::post('/anganwadi/store', [AnganwadiQuestionController::class, 'store'])->name('anganwadi-questions.store');
+Route::post('/supply/store', [SupplyQuestionController::class, 'store'])->name('supply-questions.store');
+Route::post('/banking/store', [BankingQuestionController::class, 'store'])->name('banking-questions.store');
+Route::post('/water/store', [WaterQuestionController::class, 'store'])->name('water-questions.store');
+Route::post('/grampanchayat/store', [GramPanchayatQuestionController::class, 'store'])->name('grampanchayat-questions.store');
+Route::post('/electricity/store', [ElectricityQuestionController::class, 'store'])->name('electricity-questions.store');
+Route::post('/other/store', [OtherQuestionController::class, 'store'])->name('other-questions.store');
+Route::post('/road/store', [RoadQuestionController::class, 'store'])->name('road-questions.store');
+Route::post('/sewer/store', [SewerQuestionController::class, 'store'])->name('sewer-questions.store');
+Route::post('/cleanliness/store', [CleanlinessQuestionController::class, 'store'])->name('cleanliness-questions.store');
+Route::post('/revenue/store', [RevenueQuestionController::class, 'store'])->name('revenue-questions.store');
+Route::post('/polution/store', [PolutionQuestionController::class, 'store'])->name('polution-questions.store');
 // Storing Routes Starts END

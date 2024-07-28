@@ -28,15 +28,15 @@ return new class extends Migration
             $table->string('bank_3')->nullable();
             $table->string('bank_4bcn')->nullable();
             $table->string('bank_4bcm')->nullable();
-            $table->integer('bank_5')->nullable();
-            $table->integer('bank_6')->nullable();
-            $table->integer('bank_7')->nullable();
-            $table->integer('bank_8')->nullable();
-            $table->integer('bank_9')->nullable();
+            $table->longText('bank_5')->nullable();
+            $table->longText('bank_6')->nullable();
+            $table->longText('bank_7')->nullable();
+            $table->longText('bank_8')->nullable();
+            $table->longText('bank_9')->nullable();
             $table->enum('bank_10', ['yes', 'no'])->nullable();
             $table->string('bank_10v')->nullable();
             $table->text('bank_11')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->string('details_added_by')->nullable();
             $table->timestamps();
         });
     }
