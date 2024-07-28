@@ -96,11 +96,7 @@
             @foreach ($formStatuses as $form)
                 <li>
                     <span>{{ $form['name'] }}</span>
-                    @if ($form['filled'])
-                        <a href="{{ route($form['route']) }}" class="btn btn-edit">Edit</a>
-                    @else
-                        <a href="{{ route($form['route']) }}" class="btn">Add</a>
-                    @endif
+                    <a href="{{ route($form['route']) }}" class="btn">Add</a>
                 </li>
             @endforeach
         </ul>
