@@ -56,6 +56,7 @@ Route::post('/anganwadi/store', [AnganwadiQuestionController::class, 'store'])->
 Route::post('/supply/store', [SupplyQuestionController::class, 'store'])->name('supply-questions.store');
 Route::post('/banking/store', [BankingQuestionController::class, 'store'])->name('banking-questions.store');
 Route::post('/water/store', [WaterQuestionController::class, 'store'])->name('water-questions.store');
+Route::post('/grampanchayat/store', [GramPanchayatQuestionController::class, 'store'])->name('grampanchayat-questions.store');
 Route::post('/electricity/store', [ElectricityQuestionController::class, 'store'])->name('electricity-questions.store');
 Route::post('/road/store', [RoadQuestionController::class, 'store'])->name('road-questions.store');
 
