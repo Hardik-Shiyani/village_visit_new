@@ -57,5 +57,6 @@ Route::post('/supply/store', [SupplyQuestionController::class, 'store'])->name('
 Route::post('/banking/store', [BankingQuestionController::class, 'store'])->name('banking-questions.store');
 Route::post('/water/store', [WaterQuestionController::class, 'store'])->name('water-questions.store');
 Route::post('/electricity/store', [ElectricityQuestionController::class, 'store'])->name('electricity-questions.store');
+Route::post('/road/store', [RoadQuestionController::class, 'store'])->name('road-questions.store');
 
 // Storing Routes Starts END
