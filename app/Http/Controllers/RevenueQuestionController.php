@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\RevenueQuestions;
 
 use Illuminate\Http\Request;
 
@@ -34,7 +35,30 @@ class RevenueQuestionController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $revenueQuestion = new RevenueQuestions();
+
+        $revenueQuestion->category = $request->input('category');
+        $revenueQuestion->activity = $request->input('activity');
+        $revenueQuestion->revenue_1 = $request->input('revenue_1');
+        $revenueQuestion->revenue_1v = $request->input('revenue_1v');
+        $revenueQuestion->revenue_2 = $request->input('revenue_2');
+        $revenueQuestion->revenue_2v = $request->input('revenue_2v');
+        $revenueQuestion->revenue_3 = $request->input('revenue_3');
+        $revenueQuestion->revenue_3v = $request->input('revenue_3v');
+        $revenueQuestion->revenue_4 = $request->input('revenue_4');
+        $revenueQuestion->revenue_4v = $request->input('revenue_4v');
+        $revenueQuestion->revenue_5 = $request->input('revenue_5');
+        $revenueQuestion->revenue_5v = $request->input('revenue_5v');
+        $revenueQuestion->revenue_6 = $request->input('revenue_6');
+        $revenueQuestion->revenue_6v = $request->input('revenue_6v');
+        $revenueQuestion->revenue_7 = $request->input('revenue_7');
+        $revenueQuestion->revenue_7v = $request->input('revenue_7v');
+        $revenueQuestion->revenue_8 = $request->input('revenue_8');
+        $revenueQuestion->details_added_by = $request->input('details_added_by');
+
+        $revenueQuestion->save();
+
+        return redirect()->back()->with('success', 'Record saved successfully.');
     }
 
     /**

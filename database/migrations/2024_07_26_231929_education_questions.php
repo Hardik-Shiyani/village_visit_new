@@ -33,7 +33,7 @@ return new class extends Migration
             $table->text('mid_day_meal_details')->nullable();
             $table->string('building_condition')->nullable();
             $table->text('building_condition_details')->nullable();
-            $table->integer('number_of_rooms')->nullable();
+            $table->string('number_of_rooms')->nullable();
             $table->string('playground')->nullable();
             $table->text('playground_details')->nullable();
             $table->string('laboratory_management')->nullable();
@@ -46,19 +46,19 @@ return new class extends Migration
             $table->text('toilet_condition_details')->nullable();
             $table->text('teacher_student_attendance_details')->nullable();
             $table->text('grade')->nullable();
-            $table->integer('total_students')->nullable();
-            $table->integer('present_students')->nullable();
-            $table->integer('boys')->nullable();
-            $table->integer('girls')->nullable();
-            $table->integer('total')->nullable();
+            $table->string('total_students')->nullable();
+            $table->string('present_students')->nullable();
+            $table->string('boys')->nullable();
+            $table->string('girls')->nullable();
+            $table->string('total')->nullable();
             $table->string('smart_class_functionality')->nullable();
             $table->text('smart_class_functionality_details')->nullable();
             $table->string('iron_folic_acid_tablets')->nullable();
             $table->text('iron_folic_acid_last_date')->nullable();
             $table->text('sickle_cell_anemia_test_details')->nullable();
             $table->text('health_checkup_by_phc')->nullable();
-            $table->integer('primary_schools')->nullable();
-            $table->integer('secondary_schools')->nullable();
+            $table->string('primary_schools')->nullable();
+            $table->string('secondary_schools')->nullable();
             $table->string('building_dilapidation')->nullable();
             $table->text('building_dilapidation_details')->nullable();
             $table->string('new_building_request')->nullable();
@@ -68,7 +68,7 @@ return new class extends Migration
             $table->text('lab_experiments_details')->nullable();
             $table->string('mdm_shed_availability')->nullable();
             $table->text('mdm_shed_details')->nullable();
-            $table->integer('number_of_classrooms')->nullable();
+            $table->string('number_of_classrooms')->nullable();
             $table->string('separate_toilets_for_boys_girls')->nullable();
             $table->text('separate_toilets_details')->nullable();
             $table->text('drinking_water_details')->nullable();
@@ -80,7 +80,7 @@ return new class extends Migration
             $table->text('smc_register_details')->nullable();
             $table->string('pta_meetings_regular')->nullable();
             $table->text('pta_meetings_details')->nullable();
-            $table->integer('details_added_by')->nullable();
+            $table->string('details_added_by')->nullable();
             $table->timestamps();
         });
     }
