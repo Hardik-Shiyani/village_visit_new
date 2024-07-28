@@ -316,7 +316,7 @@
                           processData: false,
                           contentType: false,
                           success: function(response) {
-                            window.location.href = "{{ route('supply-questions-index') }}";
+                            window.location.href = "{{ route('dashboard') }}";
                           },
                           error: function(xhr, status, error) {
                             alert("An error occurred: " + xhr.responseText);
