@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -14,13 +14,13 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('userid', 'password');
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt(['email' => $credentials['userid'], 'password' => $credentials['password']])) {
             return redirect()->intended('dashboard');
         }
 
-        return redirect()->back()->withErrors(['email' => 'Invalid credentials']);
+        return redirect()->back()->withErrors(['userid' => 'Invalid credentials']);
     }
 
     public function logout(Request $request)
