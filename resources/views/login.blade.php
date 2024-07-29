@@ -100,8 +100,8 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" required>
+                <label for="userid">User ID</label>
+                <input type="text" id="userid" name="userid" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
