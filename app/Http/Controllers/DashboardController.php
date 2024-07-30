@@ -71,6 +71,7 @@ class DashboardController extends Controller
     $userId = Auth::id();
     $tables = [
         'gam_ni_vigat' => ['gujaratiName' => 'ગામ ની વિગત', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
+        'yojana_form_data' => ['gujaratiName' => 'યોજનાઓ', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
         'health_issue_questions' => ['gujaratiName' => 'આરોગ્યને બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
         'education_questions' => ['gujaratiName' => 'શિક્ષણને બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
         'supply_questions' => ['gujaratiName' => 'પુરવઠાને બાબતના પ્રશ્નો', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],

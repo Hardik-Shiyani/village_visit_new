@@ -24,6 +24,30 @@
                     <div class="step active">
 				        <div class="row">
 					        <h5 class="card-title text-center fs-4" id="yojana">સરકારશ્રીની વિવિધ યોજનાઓનો લાભ મળવાનો બાકી હોય તેવા કુટુંબો (વ્યક્તિઓની વિગત)</h5>
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="validationCustom03">તાલુકાનું નામ:</label>
+                                    <select class="form-select" name="category" id="validationCustom03" onchange="ChangecatList()" required>
+                                    <option value="">તાલુકો સિલેક્ટ કરો</option>
+                                    <option value="taluka1">ગાંધીનગર</option>
+                                    <option value="taluka2">કલોલ</option>
+                                    <option value="taluka3">દહેગામ</option>
+                                    <option value="taluka4">માણસા</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                    Please provide a category.
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="validationCustom04">ગામનું નામ:</label>
+                                    <select class="form-select" id="validationCustom04" name="activity" required></select>
+                                    <div class="invalid-feedback">
+                                    Please provide an activity.
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="village-total-population" class="form-label">ગામ ની કુલ વસ્તી:</label>
+                                    <input type="text" class="form-control" name="village-total-population" placeholder="" required>
+                                </div>
                                 <div class="col-md-12">
                                     ૧. વૃદ્ધ નિરાધાર યોજના:
                                 </div>

@@ -36,6 +36,8 @@ class YojanoController extends Controller
     public function store(Request $request)
     {
         $yojano = new Yojano();
+        $yojano->taluka_name = $request->category;
+        $yojano->village_name = $request->activity;
         $yojano->vruddha_niradhar_count = $request->vruddhaniradhar_count;
         $yojano->vruddha_niradhar_remarks = $request->vruddhaniradhar_remarks;
         $yojano->widow_count = $request->widow_count;

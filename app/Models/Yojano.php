@@ -14,6 +14,9 @@ class Yojano extends Model
 
     // Define the fillable attributes
     protected $fillable = [
+        'taluka_name',
+        'village_name',
+        'total_population',
         'vruddha_niradhar_count',
         'vruddha_niradhar_remarks',
         'widow_count',

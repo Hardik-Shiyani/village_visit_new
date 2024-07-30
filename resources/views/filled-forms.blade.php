@@ -14,12 +14,6 @@
             margin-bottom: 20px;
             color: #007bff;
         }
-        h3 {
-            background-color: #f8f9fa;
-            padding: 10px;
-            border-radius: 5px;
-            color: #333;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -83,44 +77,41 @@
 <body>
     <a href="{{ route('dashboard') }}" class="back-button">Back to Dashboard</a>
     <h2>ભરેલી વિગત: {{ Auth::user()->name }}</h2>
-    @foreach($filledTables as $table => $gujaratiName)
-        <h3>{{ $gujaratiName }}</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>ફોર્મ નામ</th>
-                    <th>તાલુકા નામ</th>
-                    <th>ગામનું નામ</th>
-                </tr>
-            </thead>
-            <tbody>
+    <table>
+        <thead>
+            <tr>
+                <th>ફોર્મ નામ</th>
+                <th>તાલુકા નામ</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($filledTables as $table => $gujaratiName)
                 @foreach($tableData[$table] as $record)
                     <tr>
                         <td>{{ $gujaratiName }}</td>
                         <td>
                             @php
                             $talukaId = $record->taluka_name;
-                                $talukaName = '';
+                            $talukaName = '';
 
-                                if ($talukaId == 'taluka1') {
-                                    $talukaName = 'ગાંધીનગર';
-                                } elseif ($talukaId == 'taluka2') {
-                                    $talukaName = 'કલોલ';
-                                } elseif ($talukaId == 'taluka3') {
-                                    $talukaName = 'દહેગામ';
-                                } elseif ($talukaId == 'taluka4') {
-                                    $talukaName = 'મણસા';
-                                } else {
-                                    $talukaName = '--';
-                                }
+                            if ($talukaId == 'taluka1') {
+                                $talukaName = 'ગાંધીનગર';
+                            } elseif ($talukaId == 'taluka2') {
+                                $talukaName = 'કલોલ';
+                            } elseif ($talukaId == 'taluka3') {
+                                $talukaName = 'દહેગામ';
+                            } elseif ($talukaId == 'taluka4') {
+                                $talukaName = 'મણસા';
+                            } else {
+                                $talukaName = '--';
+                            }
                             @endphp
                             {{ $talukaName }}
                         </td>
-                        <td>{{ $villageNames[$record->{$tables[$table]['villageColumn']}] ?? 'Unknown' }}</td>
                     </tr>
                 @endforeach
-            </tbody>
-        </table>
-    @endforeach
+            @endforeach
+        </tbody>
+    </table>
 </body>
 </html>
