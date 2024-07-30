@@ -49,6 +49,7 @@ Route::get('/anganwadi-questions', [AnganwadiQuestionController::class, 'index']
 Route::get('/banking-questions', [BankingQuestionController::class, 'index'])->name('banking-questions-index');
 Route::get('/grampanchayat-questions', [GramPanchayatQuestionController::class, 'index'])->name('grampanchayat-questions-index');
 Route::get('/other-questions', [OtherQuestionController::class, 'index'])->name('other-questions-index');
+Route::get('/bhareli-vigat-show', [DashboardController::class, 'bhareliVigatShow'])->name('bhareli-vigat-show-index');
 // View Routes END
 
 // Storing Routes Starts Here

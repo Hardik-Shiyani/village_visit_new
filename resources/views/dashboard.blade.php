@@ -59,13 +59,31 @@
         .btn-edit:hover {
             background-color: #e0a800;
         }
+        .btn-primary {
+            background-color: #007bff;
+            color: #ffffff;
+            border: 1px solid #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            color: #ffffff;
+            border: 1px solid #0056b3;
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            color: #000000;
+            border: 1px solid #ffc107;
+        }
+        .btn-warning:hover {
+            background-color: #e0a800;
+            color: #000000;
+            border: 1px solid #e0a800;
+        }
         .dashboard-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        .logout-btn {
-            margin-left: auto;
+            margin-bottom: 20px;
         }
         button.btn.btn-primary.logoutBtn {
             background-color: #fff;
@@ -85,12 +103,7 @@
     <div class="card">
         <div class="dashboard-header">
             <h2>Dashboard</h2>
-            <div class="logout-btn">
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
-                    @csrf
-                    <button type="submit" class="btn btn-primary logoutBtn">Logout</button>
-                </form>
-            </div>
+            <a href="{{ route('bhareli-vigat-show-index') }}" class="">ભરેલી વિગત</a>
         </div>
         <ul>
             @foreach ($formStatuses as $form)
@@ -100,6 +113,12 @@
                 </li>
             @endforeach
         </ul>
+        <div class="logout-btn">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="btn btn-primary logoutBtn">Logout</button>
+            </form>
+        </div>
     </div>
 </div>
 
