@@ -20,7 +20,7 @@
         <div class="container mt-3">
             <div class="card mb-3">
                 <div class="card-body">
-                    <form id="surveyForm">
+                    <form id="surveyForm" name="Gam Ni Vigat">
                         <div class="step active">
                             <h5 class="card-title text-center fs-4" id="villagedetails">ગામ ની વિગત</h5>
                             <div class="row">
@@ -288,6 +288,12 @@
                             type: 'POST',
                             data: $(form).serialize(),
                             success: function(response) {
+                                var formName = $('#surveyForm').attr('name');
+                                if (formName) {
+                                    alert('Form "' + formName + '" submitted successfully!');
+                                } else {
+                                    alert('Form submitted successfully!');
+                                }
                                 $('#nextButton').trigger('click');
                             },
                             error: function(xhr, status, error) {

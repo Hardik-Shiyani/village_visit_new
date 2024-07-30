@@ -23,7 +23,7 @@
 		<div class="card mb-3">
 
                                 <div class="card-body">
-        <form id="surveyForm">
+        <form id="surveyForm" name="Anganwadi Questions">
      			<!-- Step 13 -->
 			<div class="step active">
 				<div class="row">
@@ -345,6 +345,12 @@
                         type: 'POST',
                         data: $(form).serialize(),
                         success: function(response) {
+                            var formName = $('#surveyForm').attr('name');
+                            if (formName) {
+                                alert('Form "' + formName + '" submitted successfully!');
+                            } else {
+                                alert('Form submitted successfully!');
+                            }
                             $('#nextButton').trigger('click');
                         },
                         error: function(xhr, status, error) {

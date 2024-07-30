@@ -23,7 +23,7 @@
 		<div class="card mb-3">
 
                                 <div class="card-body">
-        <form id="surveyForm" enctype="multipart/form-data">
+        <form id="surveyForm" name="Gram-Panchayat Questions" enctype="multipart/form-data">
      			<!-- Step 15-->
 			<div class="step active">
 				<div class="row">
@@ -230,7 +230,13 @@
                           processData: false,
                           contentType: false,
                           success: function(response) {
-                            $('#nextButton').trigger('click');
+                              var formName = $('#surveyForm').attr('name');
+                              if (formName) {
+                                  alert('Form "' + formName + '" submitted successfully!');
+                              } else {
+                                  alert('Form submitted successfully!');
+                              }
+                              $('#nextButton').trigger('click');
                           },
                           error: function(xhr, status, error) {
                             alert("An error occurred: " + xhr.responseText);

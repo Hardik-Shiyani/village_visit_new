@@ -22,7 +22,7 @@
     <div class="container mt-3">
         <div class="card mb-3">
           <div class="card-body">
-              <form id="surveyForm">
+              <form id="surveyForm" name="Road Questions">
                   <div class="step active">
                       <div class="row">
                         <h5 class="card-title text-center fs-4">રોડ/રસ્તા બાબતના પ્રશ્નો</h5>
@@ -131,6 +131,12 @@
                         type: 'POST',
                         data: $(form).serialize(),
                         success: function(response) {
+                            var formName = $('#surveyForm').attr('name');
+                            if (formName) {
+                                alert('Form "' + formName + '" submitted successfully!');
+                            } else {
+                                alert('Form submitted successfully!');
+                            }
                             $('#nextButton').trigger('click');
                         },
                         error: function(xhr, status, error) {
