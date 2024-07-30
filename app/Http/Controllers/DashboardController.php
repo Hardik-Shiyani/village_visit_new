@@ -67,52 +67,57 @@ class DashboardController extends Controller
     }
 
     public function bhareliVigatShow()
-    {
-        $userId = Auth::id();
-        $tables = [
-            'gam_ni_vigat' => ['gujaratiName' => 'ગામ ની વિગત', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
-            // 'yojana_form_data' => ['gujaratiName' => 'યોજનાઓ', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
-            'health_issue_questions' => ['gujaratiName' => 'આરોગ્યને બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
-            'education_questions' => ['gujaratiName' => 'શિક્ષણને બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
-            'supply_questions' => ['gujaratiName' => 'પુરવઠાને બાબતના પ્રશ્નો', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],
-            'water_questions' => ['gujaratiName' => 'પાણીને બાબતના પ્રશ્નો', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],
-            'electric_questions' => ['gujaratiName' => 'વીજપુરવઠો બાબતના પ્રશ્નો', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],
-            'road_question_form_data' => ['gujaratiName' => 'રોડ/રસ્તા બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
-            'sewer_questions_form_data' => ['gujaratiName' => 'ગટર બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
-            'cleanliness_questions_form_data' => ['gujaratiName' => 'સ્વચ્છતા બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name_cleanliness', 'villageColumn' => 'village_name_cleanliness'],
-            'pollution_questions_form_data' => ['gujaratiName' => 'પ્રદુષણ બાબતના પ્રશ્નો', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],
-            'revenue_questions_form_data' => ['gujaratiName' => 'મહેસુલી બાબતે', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],
-            'anganwadi_questions' => ['gujaratiName' => 'આંગણવાડીને લગતા પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
-            'banking_services_vigat' => ['gujaratiName' => 'બેંકીંગ સેવાને લગતા પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
-            'grampanchayat_vigat' => ['gujaratiName' => 'ગ્રામ પંચાયત બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
-            'other_issues' => ['gujaratiName' => 'અન્ય બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
-        ];
+{
+    $userId = Auth::id();
+    $tables = [
+        'gam_ni_vigat' => ['gujaratiName' => 'ગામ ની વિગત', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
+        'health_issue_questions' => ['gujaratiName' => 'આરોગ્યને બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
+        'education_questions' => ['gujaratiName' => 'શિક્ષણને બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
+        'supply_questions' => ['gujaratiName' => 'પુરવઠાને બાબતના પ્રશ્નો', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],
+        'water_questions' => ['gujaratiName' => 'પાણીને બાબતના પ્રશ્નો', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],
+        'electric_questions' => ['gujaratiName' => 'વીજપુરવઠો બાબતના પ્રશ્નો', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],
+        'road_question_form_data' => ['gujaratiName' => 'રોડ/રસ્તા બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
+        'sewer_questions_form_data' => ['gujaratiName' => 'ગટર બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
+        'cleanliness_questions_form_data' => ['gujaratiName' => 'સ્વચ્છતા બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name_cleanliness', 'villageColumn' => 'village_name_cleanliness'],
+        'pollution_questions_form_data' => ['gujaratiName' => 'પ્રદુષણ બાબતના પ્રશ્નો', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],
+        'revenue_questions_form_data' => ['gujaratiName' => 'મહેસુલી બાબતે', 'talukaColumn' => 'category', 'villageColumn' => 'activity'],
+        'anganwadi_questions' => ['gujaratiName' => 'આંગણવાડીને લગતા પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
+        'banking_services_vigat' => ['gujaratiName' => 'બેંકીંગ સેવાને લગતા પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
+        'grampanchayat_vigat' => ['gujaratiName' => 'ગ્રામ પંચાયત બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
+        'other_issues' => ['gujaratiName' => 'અન્ય બાબતના પ્રશ્નો', 'talukaColumn' => 'taluka_name', 'villageColumn' => 'village_name'],
+    ];
 
-        $filledTables = [];
-        $tableData = [];
+    $filledTables = [];
+    $tableData = [];
 
-        foreach ($tables as $table => $columns) {
-            $count = DB::table($table)
+    foreach ($tables as $table => $columns) {
+        $count = DB::table($table)
+            ->where('details_added_by', $userId)
+            ->count();
+
+        if ($count > 0) {
+            $filledTables[$table] = $columns['gujaratiName'];
+            $data = DB::table($table)
                 ->where('details_added_by', $userId)
-                ->count();
-
-            if ($count > 0) {
-                $filledTables[$table] = $columns['gujaratiName'];
-                $data = DB::table($table)
-                    ->where('details_added_by', $userId)
-                    ->select($columns['talukaColumn'], $columns['villageColumn'])
-                    ->distinct()
-                    ->get();
-                
-                $tableData[$table] = $data;
-            }
+                ->select($columns['talukaColumn'], $columns['villageColumn'])
+                ->distinct()
+                ->get();
+            
+            $tableData[$table] = $data;
         }
-
-        return view('filled-forms', [
-            'filledTables' => $filledTables,
-            'tableData' => $tableData,
-            'tables' => $tables,
-            'allFilled' => count($filledTables) === count($tables)
-        ]);
     }
+
+    // Fetch taluka and village names from the database
+    $talukaNames = DB::table('taluka_names')->pluck('name', 'id');
+    $villageNames = DB::table('village_names')->pluck('name', 'id');
+
+    return view('filled-forms', [
+        'filledTables' => $filledTables,
+        'tableData' => $tableData,
+        'talukaNames' => $talukaNames,
+        'villageNames' => $villageNames,
+        'tables' => $tables,
+        'allFilled' => count($filledTables) === count($tables)
+    ]);
+}
 }

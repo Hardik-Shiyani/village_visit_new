@@ -97,8 +97,26 @@
                 @foreach($tableData[$table] as $record)
                     <tr>
                         <td>{{ $gujaratiName }}</td>
-                        <td>{{ $record->{$tables[$table]['talukaColumn']} }}</td>
-                        <td>{{ $record->{$tables[$table]['villageColumn']} }}</td>
+                        <td>
+                            @php
+                            $talukaId = $record->taluka_name;
+                                $talukaName = '';
+
+                                if ($talukaId == 'taluka1') {
+                                    $talukaName = 'ગાંધીનગર';
+                                } elseif ($talukaId == 'taluka2') {
+                                    $talukaName = 'કલોલ';
+                                } elseif ($talukaId == 'taluka3') {
+                                    $talukaName = 'દહેગામ';
+                                } elseif ($talukaId == 'taluka4') {
+                                    $talukaName = 'મણસા';
+                                } else {
+                                    $talukaName = '--';
+                                }
+                            @endphp
+                            {{ $talukaName }}
+                        </td>
+                        <td>{{ $villageNames[$record->{$tables[$table]['villageColumn']}] ?? 'Unknown' }}</td>
                     </tr>
                 @endforeach
             </tbody>
